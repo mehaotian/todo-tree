@@ -242,6 +242,7 @@ class Tree {
     if(this.data.length === 0) {
       console.log('没有数据了');
       let no_more = document.getElementById("nomore");
+      no_more.innerHTML = '没有待办数据，快去添加吧'
       no_more.style.display = "block";
     }
   }
@@ -708,7 +709,7 @@ if (app !== undefined) {
         treeList = rawdata;
 
         if (!treeList || treeList.length === 0) {
-          no_more.innerHTML = "没有待办数据";
+          no_more.innerHTML = "没有待办数据，快去添加吧";
         } else {
           no_more.style.display = "none";
         }
