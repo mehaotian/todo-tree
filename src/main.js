@@ -238,6 +238,12 @@ class Tree {
       const id = node.getAttribute("data-id");
       this.nodes[id] = node;
     });
+
+    if(this.data.length === 0) {
+      console.log('没有数据了');
+      let no_more = document.getElementById("nomore");
+      no_more.style.display = "block";
+    }
   }
 
   // 更新数据
@@ -282,6 +288,8 @@ class Tree {
         this.delData(this.data, id);
       }
     }
+
+    
     this.mapNodes(this.el);
   }
 
@@ -514,7 +522,7 @@ class Tree {
         }
       };
       let have = addData(treeData);
-
+      
       // 没有最外层目录，添加最外层目录
       if (!have) {
         console.log("111111", 111111);
@@ -732,7 +740,6 @@ if (app !== undefined) {
         switch (modeId) {
           case "1":
             mode = "tree";
-
             break;
           case "2":
             mode = "flat";
@@ -769,6 +776,7 @@ if (app !== undefined) {
           dom.insertBefore(li, itemNode);
         }
 
+        no_more.style.display = "none";
         tree.mapNodes(app);
       }
     });
