@@ -247,9 +247,7 @@ class Tree {
     // 检测node是否存在
     if (!node) return;
     let todoUl = node.querySelector(".list");
-    console.log("todoUl", todoUl);
     let idx = node.parentNode.getAttribute("data-index");
-    console.log("idx", idx);
     // 理论上讲只有todos会变化，才会影响dom
     if (data.todos && data.todos.length) {
       const todoDom = this.createTodoDom(data.todos, data, Number(idx) + 1);
@@ -434,7 +432,6 @@ class Tree {
 
                   let newObj = {};
                   let childData = objSet(newObj, id, child);
-                  console.log("childData", childData);
                   let newArr = [];
                   for (let key in childData) {
                     let obj = {
@@ -446,13 +443,14 @@ class Tree {
                     };
                     content = createObj(obj, childData[key]);
                   }
-                  console.log("newArr", content);
                 }
               }
 
               children.push(content);
-              this.fileSort(children);
+
               this.defineReactive(children, children.length - 1, content);
+              this.fileSort(children);
+
               // 创建数据
               if (item.mode === "tag") {
                 let node = this.nodes[item.id];
@@ -579,7 +577,6 @@ function treeChange(e, data, app) {
  */
 function search(data) {
   if (loading) return;
-  console.log("click search", data);
   hbuilderx.postMessage({
     command: "search",
     data: data,
@@ -616,7 +613,6 @@ function unfold(e) {
  * 刷新树
  */
 function refresh() {
-  console.log("刷新111", loading);
   if (loading) return;
   location.reload();
 }
@@ -677,8 +673,8 @@ if (app !== undefined) {
     console.log("init");
     // let treeList = [];
     hbuilderx.onDidReceiveMessage(function (res) {
-      console.log("on");
       let data = res.data;
+      console.log("on", data);
       if (res.command === "init") {
         rawdata = data;
         treeList = rawdata;
@@ -704,7 +700,7 @@ if (app !== undefined) {
       }
 
       if (res.command === "update") {
-        console.log("更新数据");
+        console.log("更新数据", data);
         tree.updateData(data, treeList);
       }
     });
