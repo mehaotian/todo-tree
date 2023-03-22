@@ -1,0 +1,344 @@
+@charset "utf-8";
+/* CSS Document */
+@charset "utf-8";
+
+/*!
+ * @名称：base.css
+ * @功能：1、重设浏览器默认样式
+ *       2、设置通用原子类
+ */
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+    background: white;
+    color: black;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+}
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body,
+button,
+input,
+select,
+textarea {
+    font: 12px \5b8b\4f53, arial, sans-serif;
+}
+
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+/* 去掉 table cell 的边距并让其边重合 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ie bug：th 不继承 text-align */
+th {
+    text-align: inherit;
+}
+
+/* 去除默认边框 */
+fieldset,
+img {
+    border: none;
+}
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+    display: block;
+}
+
+/* 去掉 firefox 下此元素的边框 */
+abbr,
+acronym {
+    border: none;
+    font-variant: normal;
+}
+
+/* 一致的 del 样式 */
+del {
+    text-decoration: line-through;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* 去掉列表前的标识，li 会继承 */
+ol,
+ul {
+    list-style: none;
+}
+
+/* 对齐是排版最重要的因素，别让什么都居中 */
+caption,
+th {
+    text-align: left;
+}
+
+/* 来自yahoo，让标题都自定义，适应多个系统应用 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: 500;
+}
+
+q:before,
+q:after {
+    content: '';
+}
+
+/* 统一上标和下标 */
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* 让链接在 hover 状态下显示下划线 */
+a:hover {
+    text-decoration: underline;
+}
+
+/* 默认不显示下划线，保持页面简洁 */
+ins,
+a {
+    text-decoration: none;
+}
+
+/* 去除 ie6 & ie7 焦点点状线 */
+a:focus,
+*:focus {
+    outline: none;
+}
+
+html,
+body {
+    background-color: var(--background);
+}
+#app {
+    min-width: 300px;
+}
+.container {
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+.container>.list {
+    padding: 0;
+}
+
+.list {
+    /* padding-left: 22px; */
+    margin: 5px 0;
+}
+
+.item {
+    position: relative;
+    /* padding-left: 10px; */
+    margin: 6px 0;
+    color: var(--fontColor);
+    cursor: pointer;
+    user-select: none;
+}
+
+
+.title {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+.title:hover {
+    background-color: var(--liHoverBackground);
+}
+
+.title[data-show='0']~.list {
+    display: none;
+}
+
+.title[data-show='1']~.list {
+    display: block;
+}
+.iconfont {
+    margin-top: -2px;
+}
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    font-size: 16px;
+    color: #c4a45b;
+    flex-shrink: 0;
+}
+
+.icons-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+    font-size: 10px;
+    color: #c4a45b;
+    transition: all 0.3s;
+}
+
+.title[data-show='1'] .icons-arrow {
+    transform: rotate(90deg);
+}
+
+.icons.icon-daiban {
+    color: #409EFF;
+}
+
+.icons.icon-gantanhao {
+    color: #F56C6C;
+}
+
+.icons.icon-zhuyi {
+    color: #67C23A;
+}
+
+.icons.icon-bug {
+    color: #F56C6C;
+}
+.icons.icon-xiufu {
+    color: #909399;
+}
+.tag {
+    flex-shrink: 0;
+    display: block;
+    margin: 0 5px;
+    width: 35px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.label {
+    margin-left: 5px;
+    font-size: 12px;
+    /* 文字溢出显示... */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tools-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    padding: 0 15px;
+    padding-left: 15px;
+}
+
+.tools-title {
+    font-size: 12px;
+    color: #333;
+    font-weight: bold;
+}
+
+.tools-btn {
+    font-size: 18px;
+}
+.tools-btn .btn-item {
+    margin: 0 5px;
+    /* padding: 0 5px; */
+    /* border: 1px solid #c4a45b;
+    border-radius: 3px; */
+    color: #c4a45b;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+    border:  1px solid transparent;
+    transition: all 0.3s;
+}
+
+.tools-btn .btn-item:hover {
+    color: var(--inputLineColor);
+    border: 1px var(--lineColor)  solid;
+    background-color: var(--menuBackground);
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 0 0 5px 1pxpx rgba(0, 0, 0, 0.1);
+}
+.tools-btn .btn-item:active {
+    background-color: var(--lineColor);
+}
+
+
+.no-data {
+    padding: 50px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+}

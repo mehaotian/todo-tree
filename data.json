@@ -1,0 +1,1285 @@
+[
+  {
+    "appid": "",
+    "children": [
+      {
+        "children": [
+          
+          {
+            "fileExt": "vue",
+            "fileType": "file",
+            "id": "my-vue3-project-test/src/App.vue",
+            "name": "App.vue",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/my-vue3-project-test/src/App.vue",
+            "todos": [
+              { "description": "123", "keyword": "TODO", "lineNumber": 7 }
+            ]
+          },
+          {
+            "fileExt": "json",
+            "fileType": "file",
+            "id": "my-vue3-project-test/src/pages.json",
+            "name": "pages.json",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/my-vue3-project-test/src/pages.json",
+            "todos": [
+              { "description": "需要改进", "keyword": "BUG", "lineNumber": 10 }
+            ]
+          },
+          {
+            "fileExt": "scss",
+            "fileType": "file",
+            "id": "my-vue3-project-test/src/uni.scss",
+            "name": "uni.scss",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/my-vue3-project-test/src/uni.scss",
+            "todos": [
+              {
+                "description": "这里需要变化",
+                "keyword": "TODO",
+                "lineNumber": 16
+              },
+              {
+                "description": "这是一个需要注意的地方",
+                "keyword": "FIXME",
+                "lineNumber": 17
+              }
+            ]
+          }
+        ],
+        "fileType": "dir",
+        "id": "my-vue3-project-test/src",
+        "name": "src",
+        "path": "/Users/mehaotian/Desktop/uniui-temp-project/my-vue3-project-test/src"
+      },
+      {
+        "fileExt": "html",
+        "fileType": "file",
+        "id": "my-vue3-project-test/index.html",
+        "name": "index.html",
+        "path": "/Users/mehaotian/Desktop/uniui-temp-project/my-vue3-project-test/index.html",
+        "todos": [
+          { "description": "app-context", "keyword": "TODO", "lineNumber": 14 }
+        ]
+      },
+      {
+        "fileExt": "js",
+        "fileType": "file",
+        "id": "my-vue3-project-test/vite.config.js",
+        "name": "vite.config.js",
+        "path": "/Users/mehaotian/Desktop/uniui-temp-project/my-vue3-project-test/vite.config.js",
+        "todos": [
+          {
+            "description": "https://vitejs.dev/config/",
+            "keyword": "TODO",
+            "lineNumber": 3
+          }
+        ]
+      }
+    ],
+    "fileType": "dir",
+    "id": "my-vue3-project-test",
+    "metatype": "WorkspaceFolder",
+    "name": "my-vue3-project-test",
+    "nature": "UniApp_Vue",
+    "path": "/Users/mehaotian/Desktop/uniui-temp-project/my-vue3-project-test",
+    "root": true,
+    "uri": {
+      "authority": "",
+      "fragment": "",
+      "fsPath": "/Users/mehaotian/Desktop/uniui-temp-project/my-vue3-project-test",
+      "metatype": "Uri",
+      "path": "/Users/mehaotian/Desktop/uniui-temp-project/my-vue3-project-test",
+      "query": "",
+      "scheme": "file"
+    }
+  },
+  {
+    "appid": "__UNI__2E34B84",
+    "children": [
+      {
+        "children": [
+          {
+            "fileExt": "js",
+            "fileType": "file",
+            "id": "hello-uni-app-test/components/u-charts/u-charts.js",
+            "name": "u-charts.js",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/components/u-charts/u-charts.js",
+            "todos": [
+              {
+                "description": "逻辑不对",
+                "keyword": "TODO",
+                "lineNumber": 3436
+              },
+              {
+                "description": "废弃config.legendHeight参数",
+                "keyword": "TODO",
+                "lineNumber": 4120
+              }
+            ]
+          }
+        ],
+        "fileType": "dir",
+        "id": "hello-uni-app-test/components/u-charts",
+        "name": "components/u-charts",
+        "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/components/u-charts"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "fileExt": "vue",
+                    "fileType": "file",
+                    "id": "hello-uni-app-test/pages/API/image/image.vue",
+                    "name": "image.vue",
+                    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/API/image/image.vue",
+                    "todos": [
+                      {
+                        "description": "选择相机或相册时 需要弹出actionsheet，目前无法获得是相机还是相册，在失败回调中处理",
+                        "keyword": "TODO",
+                        "lineNumber": 113
+                      }
+                    ]
+                  }
+                ],
+                "fileType": "dir",
+                "id": "hello-uni-app-test/pages/API/image",
+                "name": "image",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/API/image"
+              },
+              {
+                "children": [
+                  {
+                    "fileExt": "vue",
+                    "fileType": "file",
+                    "id": "hello-uni-app-test/pages/API/voice/voice.vue",
+                    "name": "voice.vue",
+                    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/API/voice/voice.vue",
+                    "todos": [
+                      {
+                        "description": "ios 在没有请求过权限之前无法得知是否有相关权限，这种状态下需要直接调用录音，但没有状态或回调判断用户拒绝",
+                        "keyword": "TODO",
+                        "lineNumber": 126
+                      }
+                    ]
+                  }
+                ],
+                "fileType": "dir",
+                "id": "hello-uni-app-test/pages/API/voice",
+                "name": "voice",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/API/voice"
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/pages/API",
+            "name": "API",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/API"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "vue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/pages/component/cover-view/cover-view.vue",
+                "name": "cover-view.vue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/component/cover-view/cover-view.vue",
+                "todos": [
+                  {
+                    "description": "暂时条件编译解决支付宝小程序不能正常显示 cover-x",
+                    "keyword": "TODO",
+                    "lineNumber": 5
+                  },
+                  {
+                    "description": "QQ暂不支持地图组件",
+                    "keyword": "TODO",
+                    "lineNumber": 18
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/pages/component/cover-view",
+            "name": "component/cover-view",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/component/cover-view"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "fileExt": "nvue",
+                    "fileType": "file",
+                    "id": "hello-uni-app-test/pages/extUI/calendar/calendar.nvue",
+                    "name": "calendar.nvue",
+                    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/extUI/calendar/calendar.nvue",
+                    "todos": [
+                      {
+                        "description": "模拟请求异步同步数据",
+                        "keyword": "TODO",
+                        "lineNumber": 61
+                      }
+                    ]
+                  },
+                  {
+                    "fileExt": "vue",
+                    "fileType": "file",
+                    "id": "hello-uni-app-test/pages/extUI/calendar/calendar.vue",
+                    "name": "calendar.vue",
+                    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/extUI/calendar/calendar.vue",
+                    "todos": [
+                      {
+                        "description": "模拟请求异步同步数据",
+                        "keyword": "TODO",
+                        "lineNumber": 63
+                      }
+                    ]
+                  }
+                ],
+                "fileType": "dir",
+                "id": "hello-uni-app-test/pages/extUI/calendar",
+                "name": "calendar",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/extUI/calendar"
+              },
+              {
+                "children": [
+                  {
+                    "fileExt": "vue",
+                    "fileType": "file",
+                    "id": "hello-uni-app-test/pages/extUI/collapse/collapse.vue",
+                    "name": "collapse.vue",
+                    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/extUI/collapse/collapse.vue",
+                    "todos": [
+                      {
+                        "description": "app 端默认不使用动画，app在使用高度动画的时候会有性能开销问题，所以应该要酌情使用",
+                        "keyword": "TODO",
+                        "lineNumber": 27
+                      },
+                      {
+                        "description": "小程序中不支持自动更新 ，需要手动resize 更新组件高度",
+                        "keyword": "TODO",
+                        "lineNumber": 131
+                      }
+                    ]
+                  }
+                ],
+                "fileType": "dir",
+                "id": "hello-uni-app-test/pages/extUI/collapse",
+                "name": "collapse",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/extUI/collapse"
+              },
+              {
+                "children": [
+                  {
+                    "fileExt": "vue",
+                    "fileType": "file",
+                    "id": "hello-uni-app-test/pages/extUI/transition/transition.vue",
+                    "name": "transition.vue",
+                    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/extUI/transition/transition.vue",
+                    "todos": [
+                      {
+                        "description": "下面修改宽高在百度下还有些问题待修复",
+                        "keyword": "TODO",
+                        "lineNumber": 56
+                      }
+                    ]
+                  }
+                ],
+                "fileType": "dir",
+                "id": "hello-uni-app-test/pages/extUI/transition",
+                "name": "transition",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/extUI/transition"
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/pages/extUI",
+            "name": "extUI",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/extUI"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "nvue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/pages/tabBar/component/component.nvue",
+                "name": "component.nvue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/tabBar/component/component.nvue",
+                "todos": [
+                  {
+                    "description": "修复Android v3 加载过慢问题",
+                    "keyword": "TODO",
+                    "lineNumber": 27
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/pages/tabBar/component",
+            "name": "tabBar/component",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/tabBar/component"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "fileExt": "vue",
+                    "fileType": "file",
+                    "id": "hello-uni-app-test/pages/template/list2detail-detail/list2detail-detail.vue",
+                    "name": "list2detail-detail.vue",
+                    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/template/list2detail-detail/list2detail-detail.vue",
+                    "todos": [
+                      {
+                        "description": "后面把参数名替换成 payload",
+                        "keyword": "TODO",
+                        "lineNumber": 61
+                      }
+                    ]
+                  }
+                ],
+                "fileType": "dir",
+                "id": "hello-uni-app-test/pages/template/list2detail-detail",
+                "name": "list2detail-detail",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/template/list2detail-detail"
+              },
+              {
+                "children": [
+                  {
+                    "fileExt": "nvue",
+                    "fileType": "file",
+                    "id": "hello-uni-app-test/pages/template/swiper-list/swiper-list.nvue",
+                    "name": "swiper-list.nvue",
+                    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/template/swiper-list/swiper-list.nvue",
+                    "todos": [
+                      {
+                        "description": "fix ios offset",
+                        "keyword": "TODO",
+                        "lineNumber": 236
+                      }
+                    ]
+                  }
+                ],
+                "fileType": "dir",
+                "id": "hello-uni-app-test/pages/template/swiper-list",
+                "name": "swiper-list",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/template/swiper-list"
+              },
+              {
+                "children": [
+                  {
+                    "fileExt": "nvue",
+                    "fileType": "file",
+                    "id": "hello-uni-app-test/pages/template/swiper-list-nvue/swiper-list-nvue.nvue",
+                    "name": "swiper-list-nvue.nvue",
+                    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/template/swiper-list-nvue/swiper-list-nvue.nvue",
+                    "todos": [
+                      {
+                        "description": "fix ios offset",
+                        "keyword": "TODO",
+                        "lineNumber": 237
+                      }
+                    ]
+                  }
+                ],
+                "fileType": "dir",
+                "id": "hello-uni-app-test/pages/template/swiper-list-nvue",
+                "name": "swiper-list-nvue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/template/swiper-list-nvue"
+              },
+              {
+                "children": [
+                  {
+                    "fileExt": "nvue",
+                    "fileType": "file",
+                    "id": "hello-uni-app-test/pages/template/tabbar/news-item.nvue",
+                    "name": "news-item.nvue",
+                    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/template/tabbar/news-item.nvue",
+                    "todos": [
+                      {
+                        "description": "在支付宝小程序下 需要用 style 覆盖标签的默认样式",
+                        "keyword": "TODO",
+                        "lineNumber": 6
+                      }
+                    ]
+                  }
+                ],
+                "fileType": "dir",
+                "id": "hello-uni-app-test/pages/template/tabbar",
+                "name": "tabbar",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/template/tabbar"
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/pages/template",
+            "name": "template",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages/template"
+          }
+        ],
+        "fileType": "dir",
+        "id": "hello-uni-app-test/pages",
+        "name": "pages",
+        "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/pages"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "fileExt": "vue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/platforms/app-plus/feedback/feedback.vue",
+                "name": "feedback.vue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/platforms/app-plus/feedback/feedback.vue",
+                "todos": [
+                  {
+                    "description": "服务端限制上传文件一次最大不超过 2M, 图片一次最多不超过5张",
+                    "keyword": "TODO",
+                    "lineNumber": 143
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/platforms/app-plus/feedback",
+            "name": "feedback",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/platforms/app-plus/feedback"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "vue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/platforms/app-plus/speech/speech.vue",
+                "name": "speech.vue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/platforms/app-plus/speech/speech.vue",
+                "todos": [
+                  {
+                    "description": "ios 在没有请求过权限之前无法得知是否有相关权限，这种状态下需要直接调用语音，会弹出正在识别的toast",
+                    "keyword": "TODO",
+                    "lineNumber": 36
+                  },
+                  {
+                    "description": "ios 在没有请求过权限之前无法得知是否有相关权限，这种状态下需要直接调用语音，会弹出正在识别的toast",
+                    "keyword": "TODO",
+                    "lineNumber": 56
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/platforms/app-plus/speech",
+            "name": "speech",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/platforms/app-plus/speech"
+          }
+        ],
+        "fileType": "dir",
+        "id": "hello-uni-app-test/platforms/app-plus",
+        "name": "platforms/app-plus",
+        "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/platforms/app-plus"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "fileExt": "vue",
+                    "fileType": "file",
+                    "id": "hello-uni-app-test/uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue",
+                    "name": "uni-collapse.vue",
+                    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue",
+                    "todos": [
+                      {
+                        "description": "兼容 vue2 和 vue3",
+                        "keyword": "TODO",
+                        "lineNumber": 37
+                      }
+                    ]
+                  }
+                ],
+                "fileType": "dir",
+                "id": "hello-uni-app-test/uni_modules/uni-collapse/components/uni-collapse",
+                "name": "uni-collapse",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-collapse/components/uni-collapse"
+              },
+              {
+                "children": [
+                  {
+                    "fileExt": "vue",
+                    "fileType": "file",
+                    "id": "hello-uni-app-test/uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.vue",
+                    "name": "uni-collapse-item.vue",
+                    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.vue",
+                    "todos": [
+                      {
+                        "description": "随机生生元素ID，解决百度小程序获取同一个元素位置信息的bug",
+                        "keyword": "TODO",
+                        "lineNumber": 104
+                      },
+                      {
+                        "description": "vue2",
+                        "keyword": "TODO",
+                        "lineNumber": 131
+                      },
+                      {
+                        "description": "vue3",
+                        "keyword": "TODO",
+                        "lineNumber": 138
+                      },
+                      {
+                        "description": "百度中可能获取不到节点信息 ，需要循环获取",
+                        "keyword": "TODO",
+                        "lineNumber": 201
+                      }
+                    ]
+                  }
+                ],
+                "fileType": "dir",
+                "id": "hello-uni-app-test/uni_modules/uni-collapse/components/uni-collapse-item",
+                "name": "uni-collapse-item",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-collapse/components/uni-collapse-item"
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-collapse/components",
+            "name": "uni-collapse/components",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-collapse/components"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "vue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-data-checkbox/components/uni-data-checkbox/uni-data-checkbox.vue",
+                "name": "uni-data-checkbox.vue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-data-checkbox/components/uni-data-checkbox/uni-data-checkbox.vue",
+                "todos": [
+                  {
+                    "description": "vue3",
+                    "keyword": "TODO",
+                    "lineNumber": 88
+                  },
+                  {
+                    "description": "兼容 vue2",
+                    "keyword": "TODO",
+                    "lineNumber": 277
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-data-checkbox/components/uni-data-checkbox",
+            "name": "uni-data-checkbox/components/uni-data-checkbox",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-data-checkbox/components/uni-data-checkbox"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "vue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue",
+                "name": "uni-easyinput.vue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue",
+                "todos": [
+                  {
+                    "description": "处理头条 formItem 中 errMsg 不更新的问题",
+                    "keyword": "TODO",
+                    "lineNumber": 224
+                  },
+                  {
+                    "description": "处理头条vue3 computed 不监听 inject 更改的问题（formItem.errMsg）",
+                    "keyword": "TODO",
+                    "lineNumber": 278
+                  },
+                  {
+                    "description": "兼容 vue2",
+                    "keyword": "TODO",
+                    "lineNumber": 338
+                  },
+                  {
+                    "description": "兼容　vue3",
+                    "keyword": "TODO",
+                    "lineNumber": 340
+                  },
+                  {
+                    "description": "兼容 vue2",
+                    "keyword": "TODO",
+                    "lineNumber": 402
+                  },
+                  {
+                    "description": "兼容 vue2",
+                    "keyword": "TODO",
+                    "lineNumber": 404
+                  },
+                  {
+                    "description": "兼容　vue3",
+                    "keyword": "TODO",
+                    "lineNumber": 405
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-easyinput/components/uni-easyinput",
+            "name": "uni-easyinput/components/uni-easyinput",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-easyinput/components/uni-easyinput"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "vue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-fav/components/uni-fav/uni-fav.vue",
+                "name": "uni-fav.vue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-fav/components/uni-fav/uni-fav.vue",
+                "todos": [
+                  {
+                    "description": "兼容 vue3，需要注册事件",
+                    "keyword": "TODO",
+                    "lineNumber": 44
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-fav/components/uni-fav",
+            "name": "uni-fav/components/uni-fav",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-fav/components/uni-fav"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "vue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-file-picker/components/uni-file-picker/uni-file-picker.vue",
+                "name": "uni-file-picker.vue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-file-picker/components/uni-file-picker/uni-file-picker.vue",
+                "todos": [
+                  {
+                    "description": "兼容不开通服务空间的情况",
+                    "keyword": "TODO",
+                    "lineNumber": 242
+                  },
+                  {
+                    "description": "如果为空，video 有问题",
+                    "keyword": "TODO",
+                    "lineNumber": 352
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-file-picker/components/uni-file-picker",
+            "name": "uni-file-picker/components/uni-file-picker",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-file-picker/components/uni-file-picker"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "fileExt": "vue",
+                    "fileType": "file",
+                    "id": "hello-uni-app-test/uni_modules/uni-forms/components/uni-forms/uni-forms.vue",
+                    "name": "uni-forms.vue",
+                    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-forms/components/uni-forms/uni-forms.vue",
+                    "todos": [
+                      {
+                        "description": "兼容旧版 uni-data-picker ,新版本中无效，只是避免报错",
+                        "keyword": "TODO",
+                        "lineNumber": 191
+                      },
+                      {
+                        "description": "有可能子组件合并规则的时机比这个要早，所以需要合并对象 ，而不是直接赋值，可能会被覆盖",
+                        "keyword": "TODO",
+                        "lineNumber": 202
+                      },
+                      {
+                        "description": "submit 即将废弃",
+                        "keyword": "TODO",
+                        "lineNumber": 352
+                      }
+                    ]
+                  }
+                ],
+                "fileType": "dir",
+                "id": "hello-uni-app-test/uni_modules/uni-forms/components/uni-forms",
+                "name": "uni-forms",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-forms/components/uni-forms"
+              },
+              {
+                "children": [
+                  {
+                    "fileExt": "vue",
+                    "fileType": "file",
+                    "id": "hello-uni-app-test/uni_modules/uni-forms/components/uni-forms-item/uni-forms-item.vue",
+                    "name": "uni-forms-item.vue",
+                    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-forms/components/uni-forms-item/uni-forms-item.vue",
+                    "todos": [
+                      {
+                        "description": "处理头条vue3 watch不生效的问题",
+                        "keyword": "TODO",
+                        "lineNumber": 147
+                      },
+                      {
+                        "description": "处理头条vue3 watch不生效的问题",
+                        "keyword": "TODO",
+                        "lineNumber": 168
+                      },
+                      {
+                        "description": "如果 oldVal = undefined ，那么大概率是源数据里没有值导致 ，这个情况不哦校验 ,可能不严谨 ，需要在做观察",
+                        "keyword": "TODO",
+                        "lineNumber": 184
+                      },
+                      {
+                        "description": "因为小程序平台会多一层标签节点 ，所以需要在多余节点继承当前样式",
+                        "keyword": "TODO",
+                        "lineNumber": 508
+                      }
+                    ]
+                  }
+                ],
+                "fileType": "dir",
+                "id": "hello-uni-app-test/uni_modules/uni-forms/components/uni-forms-item",
+                "name": "uni-forms-item",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-forms/components/uni-forms-item"
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-forms/components",
+            "name": "uni-forms/components",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-forms/components"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "vue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-number-box/components/uni-number-box/uni-number-box.vue",
+                "name": "uni-number-box.vue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-number-box/components/uni-number-box/uni-number-box.vue",
+                "todos": [
+                  {
+                    "description": "vue2 兼容",
+                    "keyword": "TODO",
+                    "lineNumber": 118
+                  },
+                  {
+                    "description": "vue3 兼容",
+                    "keyword": "TODO",
+                    "lineNumber": 120
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-number-box/components/uni-number-box",
+            "name": "uni-number-box/components/uni-number-box",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-number-box/components/uni-number-box"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "vue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-pagination/components/uni-pagination/uni-pagination.vue",
+                "name": "uni-pagination.vue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-pagination/components/uni-pagination/uni-pagination.vue",
+                "todos": [
+                  {
+                    "description": "最大页数",
+                    "keyword": "TODO",
+                    "lineNumber": 132
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-pagination/components/uni-pagination",
+            "name": "uni-pagination/components/uni-pagination",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-pagination/components/uni-pagination"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "vue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-popup/components/uni-popup/uni-popup.vue",
+                "name": "uni-popup.vue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-popup/components/uni-popup/uni-popup.vue",
+                "todos": [
+                  {
+                    "description": "2 个版本后废弃属性 ，使用 isMaskClick",
+                    "keyword": "TODO",
+                    "lineNumber": 72
+                  },
+                  {
+                    "description": "fix by mehaotian 是否适配底部安全区 ,目前微信ios 、和 app ios 计算有差异，需要框架修复",
+                    "keyword": "TODO",
+                    "lineNumber": 192
+                  },
+                  {
+                    "description": "vue2",
+                    "keyword": "TODO",
+                    "lineNumber": 213
+                  },
+                  {
+                    "description": "vue3",
+                    "keyword": "TODO",
+                    "lineNumber": 219
+                  },
+                  {
+                    "description": "处理 message 组件生命周期异常的问题",
+                    "keyword": "TODO",
+                    "lineNumber": 236
+                  },
+                  {
+                    "description": "解决头条冒泡的问题",
+                    "keyword": "TODO",
+                    "lineNumber": 238
+                  },
+                  {
+                    "description": "nvue 取消冒泡",
+                    "keyword": "TODO",
+                    "lineNumber": 261
+                  },
+                  {
+                    "description": "处理冒泡事件，头条的冒泡事件有问题 ，先这样兼容",
+                    "keyword": "TODO",
+                    "lineNumber": 302
+                  },
+                  {
+                    "description": "兼容 type 属性 ，后续会废弃",
+                    "keyword": "TODO",
+                    "lineNumber": 329
+                  },
+                  {
+                    "description": "兼容 type 属性 ，后续会废弃",
+                    "keyword": "TODO",
+                    "lineNumber": 353
+                  },
+                  {
+                    "description": "兼容 type 属性 ，后续会废弃",
+                    "keyword": "TODO",
+                    "lineNumber": 377
+                  },
+                  {
+                    "description": "兼容 type 属性 ，后续会废弃",
+                    "keyword": "TODO",
+                    "lineNumber": 396
+                  },
+                  {
+                    "description": "兼容 type 属性 ，后续会废弃",
+                    "keyword": "TODO",
+                    "lineNumber": 415
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-popup/components/uni-popup",
+            "name": "uni-popup/components/uni-popup",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-popup/components/uni-popup"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "vue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-rate/components/uni-rate/uni-rate.vue",
+                "name": "uni-rate.vue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-rate/components/uni-rate/uni-rate.vue",
+                "todos": [
+                  {
+                    "description": "做一下兼容，只有 Nvue 下才有 screenX，其他平台式 clientX",
+                    "keyword": "TODO",
+                    "lineNumber": 184
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-rate/components/uni-rate",
+            "name": "uni-rate/components/uni-rate",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-rate/components/uni-rate"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "vue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-row/components/uni-col/uni-col.vue",
+                "name": "uni-col.vue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-row/components/uni-col/uni-col.vue",
+                "todos": [
+                  {
+                    "description": "1/24 * $size * 100 * 1%; 使用计算后的值，为了解决 vue3 控制台报错",
+                    "keyword": "TODO",
+                    "lineNumber": 232
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-row/components/uni-col",
+            "name": "uni-row/components/uni-col",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-row/components/uni-col"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "scss",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-scss/styles/setting/_color.scss",
+                "name": "_color.scss",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-scss/styles/setting/_color.scss",
+                "todos": [
+                  {
+                    "description": "暂时不需要 class ，需要用户使用变量实现 ，如果使用类名其实并不推荐",
+                    "keyword": "TODO",
+                    "lineNumber": 2
+                  }
+                ]
+              },
+              {
+                "fileExt": "scss",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-scss/styles/setting/_styles.scss",
+                "name": "_styles.scss",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-scss/styles/setting/_styles.scss",
+                "todos": [
+                  {
+                    "description": "暂时处理边框隐藏一边的问题",
+                    "keyword": "TODO",
+                    "lineNumber": 74
+                  }
+                ]
+              },
+              {
+                "fileExt": "scss",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-scss/styles/setting/_variables.scss",
+                "name": "_variables.scss",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-scss/styles/setting/_variables.scss",
+                "todos": [
+                  {
+                    "description": "当前版本暂时不支持 sm 属性",
+                    "keyword": "TODO",
+                    "lineNumber": 12
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-scss/styles/setting",
+            "name": "uni-scss/styles/setting",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-scss/styles/setting"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "wxs",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-swipe-action/components/uni-swipe-action-item/index.wxs",
+                "name": "index.wxs",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-swipe-action/components/uni-swipe-action-item/index.wxs",
+                "todos": [
+                  {
+                    "description": "兼容 app-vue 获取dataset为字符串 , h5 获取 为 undefined 的问题,待框架修复",
+                    "keyword": "TODO",
+                    "lineNumber": 44
+                  },
+                  {
+                    "description": "兼容 app-vue 获取dataset为字符串 , h5 获取 为 undefined 的问题,待框架修复",
+                    "keyword": "TODO",
+                    "lineNumber": 68
+                  },
+                  {
+                    "description": "兼容 app-vue 获取dataset为字符串 , h5 获取 为 undefined 的问题,待框架修复",
+                    "keyword": "TODO",
+                    "lineNumber": 94
+                  }
+                ]
+              },
+              {
+                "fileExt": "js",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpalipay.js",
+                "name": "mpalipay.js",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpalipay.js",
+                "todos": [
+                  {
+                    "description": "解决 x 值不更新的问题，所以会多触发一次 nextTick ，待优化",
+                    "keyword": "TODO",
+                    "lineNumber": 132
+                  },
+                  {
+                    "description": "疑似bug ,初始化的时候如果x 是0，会导致移动位置错误，所以让元素超出一点",
+                    "keyword": "TODO",
+                    "lineNumber": 170
+                  }
+                ]
+              },
+              {
+                "fileExt": "js",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpother.js",
+                "name": "mpother.js",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpother.js",
+                "todos": [
+                  {
+                    "description": "随机生生元素ID，解决百度小程序获取同一个元素位置信息的bug",
+                    "keyword": "TODO",
+                    "lineNumber": 7
+                  }
+                ]
+              },
+              {
+                "fileExt": "js",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-swipe-action/components/uni-swipe-action-item/render.js",
+                "name": "render.js",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-swipe-action/components/uni-swipe-action-item/render.js",
+                "todos": [
+                  {
+                    "description": "兼容 app-vue 获取dataset为字符串 , h5 获取 为 undefined 的问题,待框架修复",
+                    "keyword": "TODO",
+                    "lineNumber": 29
+                  },
+                  {
+                    "description": "兼容 app-vue 获取dataset为字符串 , h5 获取 为 undefined 的问题,待框架修复",
+                    "keyword": "TODO",
+                    "lineNumber": 55
+                  },
+                  {
+                    "description": "兼容 app-vue 获取dataset为字符串 , h5 获取 为 undefined 的问题,待框架修复",
+                    "keyword": "TODO",
+                    "lineNumber": 80
+                  }
+                ]
+              },
+              {
+                "fileExt": "vue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-swipe-action/components/uni-swipe-action-item/uni-swipe-action-item.vue",
+                "name": "uni-swipe-action-item.vue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-swipe-action/components/uni-swipe-action-item/uni-swipe-action-item.vue",
+                "todos": [
+                  {
+                    "description": "vue2",
+                    "keyword": "TODO",
+                    "lineNumber": 195
+                  },
+                  {
+                    "description": "vue3",
+                    "keyword": "TODO",
+                    "lineNumber": 202
+                  }
+                ]
+              },
+              {
+                "fileExt": "wxs",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-swipe-action/components/uni-swipe-action-item/wx.wxs",
+                "name": "wx.wxs",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-swipe-action/components/uni-swipe-action-item/wx.wxs",
+                "todos": [
+                  {
+                    "description": "兼容 app-vue 获取dataset为字符串 , h5 获取 为 undefined 的问题,待框架修复",
+                    "keyword": "TODO",
+                    "lineNumber": 40
+                  },
+                  {
+                    "description": "兼容 app-vue 获取dataset为字符串 , h5 获取 为 undefined 的问题,待框架修复",
+                    "keyword": "TODO",
+                    "lineNumber": 64
+                  },
+                  {
+                    "description": "兼容 app-vue 获取dataset为字符串 , h5 获取 为 undefined 的问题,待框架修复",
+                    "keyword": "TODO",
+                    "lineNumber": 90
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-swipe-action/components/uni-swipe-action-item",
+            "name": "uni-swipe-action/components/uni-swipe-action-item",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-swipe-action/components/uni-swipe-action-item"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "vue",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-transition/components/uni-transition/uni-transition.vue",
+                "name": "uni-transition.vue",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-transition/components/uni-transition/uni-transition.vue",
+                "todos": [
+                  {
+                    "description": "定时器保证动画完全执行，目前有些问题，后面会取消定时器",
+                    "keyword": "TODO",
+                    "lineNumber": 164
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-transition/components/uni-transition",
+            "name": "uni-transition/components/uni-transition",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-transition/components/uni-transition"
+          },
+          {
+            "children": [
+              {
+                "fileExt": "js",
+                "fileType": "file",
+                "id": "hello-uni-app-test/uni_modules/uni-upgrade-center-app/utils/check-update.js",
+                "name": "check-update.js",
+                "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-upgrade-center-app/utils/check-update.js",
+                "todos": [
+                  {
+                    "description": "云函数报错处理",
+                    "keyword": "TODO",
+                    "lineNumber": 70
+                  },
+                  {
+                    "description": "云函数报错处理",
+                    "keyword": "TODO",
+                    "lineNumber": 76
+                  }
+                ]
+              }
+            ],
+            "fileType": "dir",
+            "id": "hello-uni-app-test/uni_modules/uni-upgrade-center-app/utils",
+            "name": "uni-upgrade-center-app/utils",
+            "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules/uni-upgrade-center-app/utils"
+          }
+        ],
+        "fileType": "dir",
+        "id": "hello-uni-app-test/uni_modules",
+        "name": "uni_modules",
+        "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test/uni_modules"
+      }
+    ],
+    "fileType": "dir",
+    "id": "hello-uni-app-test",
+    "metatype": "WorkspaceFolder",
+    "name": "hello-uni-app-test",
+    "nature": "UniApp_Vue",
+    "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test",
+    "root": true,
+    "uri": {
+      "authority": "",
+      "fragment": "",
+      "fsPath": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test",
+      "metatype": "Uri",
+      "path": "/Users/mehaotian/Desktop/uniui-temp-project/hello-uni-app-test",
+      "query": "",
+      "scheme": "file"
+    },
+    "vueVersion": "2"
+  },
+  {
+    "appid": "",
+    "children": [
+      {
+        "children": [
+          {
+            "fileExt": "js",
+            "fileType": "file",
+            "id": "hbx-todo-test-project/test/index.js",
+            "name": "index.js",
+            "path": "/Users/mehaotian/Documents/HBuilderProjects/hbx-todo-test-project/test/index.js",
+            "todos": [
+              {
+                "description": "这是一个多行注释111111clog",
+                "keyword": "TODO",
+                "lineNumber": 3
+              }
+            ]
+          }
+        ],
+        "fileType": "dir",
+        "id": "hbx-todo-test-project/test",
+        "name": "test",
+        "path": "/Users/mehaotian/Documents/HBuilderProjects/hbx-todo-test-project/test"
+      },
+      {
+        "fileExt": "js",
+        "fileType": "file",
+        "id": "hbx-todo-test-project/index.js",
+        "name": "index.js",
+        "path": "/Users/mehaotian/Documents/HBuilderProjects/hbx-todo-test-project/index.js",
+        "todos": [
+          { "description": "test 注释1", "keyword": "TODO", "lineNumber": 1 },
+          { "description": "注释2", "keyword": "TODO", "lineNumber": 6 },
+          {
+            "description": "这是一个多行注释",
+            "keyword": "TODO",
+            "lineNumber": 11
+          },
+          {
+            "description": "程序中存在一个已知的错误或问题。",
+            "keyword": "BUG",
+            "lineNumber": 22
+          },
+          {
+            "description": "指一个临时性的、有时是不规范的解决方法，用于解决某个问题或实现某个功能。但这个方法可能并不完美或可持续，也可能需要后续修改或优化",
+            "keyword": "HACK",
+            "lineNumber": 23
+          },
+          {
+            "description": "一个需要进一步注意或修复的问题，但不是紧急或重要的问题",
+            "keyword": "XXX",
+            "lineNumber": 24
+          },
+          {
+            "description": "程序中存在一些待完成的任务或功能，但在当前的版本中还没有实现。",
+            "keyword": "TODO",
+            "lineNumber": 25
+          },
+          {
+            "description": "程序中存在一个需要修复的问题，但这个问题可能较小或不紧急，可以在后续的版本中修复。",
+            "keyword": "FIXME",
+            "lineNumber": 26
+          }
+        ]
+      },
+      {
+        "fileExt": "vue",
+        "fileType": "file",
+        "id": "hbx-todo-test-project/test.vue",
+        "name": "test.vue",
+        "path": "/Users/mehaotian/Documents/HBuilderProjects/hbx-todo-test-project/test.vue",
+        "todos": [
+          { "description": "注释3", "keyword": "TODO", "lineNumber": 2 },
+          {
+            "description": "test123123 注释4",
+            "keyword": "TODO",
+            "lineNumber": 6
+          },
+          { "description": "test 注释5", "keyword": "TODO", "lineNumber": 10 }
+        ]
+      }
+    ],
+    "fileType": "dir",
+    "id": "hbx-todo-test-project",
+    "metatype": "WorkspaceFolder",
+    "name": "hbx-todo-test-project",
+    "nature": "Web",
+    "path": "/Users/mehaotian/Documents/HBuilderProjects/hbx-todo-test-project",
+    "root": true,
+    "uri": {
+      "authority": "",
+      "fragment": "",
+      "fsPath": "/Users/mehaotian/Documents/HBuilderProjects/hbx-todo-test-project",
+      "metatype": "Uri",
+      "path": "/Users/mehaotian/Documents/HBuilderProjects/hbx-todo-test-project",
+      "query": "",
+      "scheme": "file"
+    }
+  }
+]

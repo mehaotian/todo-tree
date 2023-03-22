@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="src/style/index.css" />
+    <link rel="stylesheet" href="src/style/icons.css" />
+    <link rel="stylesheet" href="src/style/iconfont.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <style>
+      :root {
+        --background: rgb(255, 250, 232);
+        --menuBackground: rgb(255, 252, 243);
+        --liHoverBackground: rgb(224, 237, 211);
+        --inputColor: rgb(255, 252, 243);
+        --inputLineColor: rgb(65, 168, 99);
+        --cursorColor: rgb(0, 0, 0);
+        --fontColor: #333;
+        --lineColor: rgb(225, 212, 178);
+      }
+      .node {
+        padding: 5px 0;
+        cursor: pointer;
+        padding-left: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <button id="btn">点击</button>
+    <!-- <script type="module" src="/src/Main.bs.js"></script> -->
+    <script type="module">
+      import treeData from "/data.json";
+      class Tree {
+        constructor(data, el) {
+          this.data = data;
+          this.el = el;
+          this.nodes = {};
+          this.init();
+        }
+
+        init() {
+          this.render();
+          this.observe(this.data);
+        }
+
+        // 创建观察数据
+        observe(data) {
+          if (!data || typeof data !== "object") {
+            return;
+          }
+          console.log('Object.keys(data)',Object.keys(data));
+          Object.keys(data).forEach((key) => {
+            this.defineReactive(data, key, data[key]);
+          });
+        }
+        // 观察数据实现
+        defineReactive(data, key, val) {
+          const self = this;
+
+          Object.defineProperty(data, key, {
+            enumerable: true,
+            configurable: true,
+            get() {
+              return val;
+            },
+            set(newVal) {
+              if (newVal === val) {
+                return;
+              }
+              val = newVal;
+              self.update(data, key, val);
+            },
+          });
+
+          // this.observe(val);
+        }
+
+        // 生成节点
+        render() {
+          const container = document.querySelector(this.el);
+          const dom = this.createNode(this.data);
+          container.appendChild(dom);
+          this.mapNodes(this.el);
+        }
+
+        // 创建节点
+        createNode(data) {
+          var elUl = document.createElement("ul");
+          elUl.classList.add("list");
+
+          data.forEach((v) => {
+            var li = this.createItemNode(v);
+            elUl.appendChild(li);
+          });
+
+          return elUl;
+        }
+
+        // 创建列表
+        createItemNode(v) {
+          var li = document.createElement("li");
+          li.classList.add("item");
+          // var dataId = li.getAttribute("data-id");
+          li.setAttribute("data-id", v.id);
+
+          var p = document.createElement("p");
+          p.classList.add("title");
+          p.setAttribute("data-show", "0");
+          var arrowIcons = document.createElement("span");
+          arrowIcons.classList.add("icons-arrow");
+          arrowIcons.classList.add("iconfont");
+          arrowIcons.classList.add("icon-you");
+          p.appendChild(arrowIcons);
+          var icons = document.createElement("i");
+          icons.classList.add("icons");
+          icons.classList.add("fileiconfont");
+          var match = v.fileType;
+          switch (match) {
+            case "dir":
+              if (v.root) {
+                icons.classList.add("icon-uniE90F");
+              } else {
+                icons.classList.add("icon-2");
+              }
+              break;
+            case "file":
+              var match$1 = v.fileExt;
+              switch (match$1) {
+                case "css":
+                  icons.classList.add("icon-css");
+                  break;
+                case "html":
+                  icons.classList.add("icon-html");
+                  break;
+                case "js":
+                  icons.classList.add("icon-js");
+                  break;
+                case "json":
+                  icons.classList.add("icon-json");
+                  break;
+                case "scss":
+                  icons.classList.add("icon-scss");
+                  break;
+                case "stylus":
+                  icons.classList.add("icon-stylus");
+                  break;
+                case "ts":
+                  icons.classList.add("icon-ts");
+                  break;
+                case "vue":
+                  icons.classList.add("icon-vue");
+                  break;
+                default:
+                  icons.classList.add("icon-uniE900");
+              }
+              break;
+            default:
+          }
+          p.appendChild(icons);
+          p.addEventListener("click", function ($$event) {
+            var currentEl = $$event.currentTarget;
+            var show = currentEl.getAttribute("data-show");
+            switch (show) {
+              case "0":
+                currentEl.setAttribute("data-show", "1");
+                break;
+              case "1":
+                currentEl.setAttribute("data-show", "0");
+                break;
+              default:
+            }
+            if (v.fileType === "dir" && !v.root) {
+              var show$1 = currentEl.getAttribute("data-show");
+              var icons = currentEl.querySelector(".icons");
+              if (icons !== undefined) {
+                // var icons$1 = Caml_option.valFromOption(icons);
+                switch (show$1) {
+                  case "0":
+                    icons.classList.remove("icon-3");
+                    icons.classList.add("icon-2");
+                    break;
+                  case "1":
+                    icons.classList.remove("icon-2");
+                    icons.classList.add("icon-3");
+                    break;
+                  default:
+                }
+              }
+            }
+          });
+          var text = document.createElement("span");
+          text.classList.add("label");
+          text.innerHTML = v.name;
+          p.appendChild(text);
+          li.appendChild(p);
+          var todos = v.todos;
+          if (todos !== undefined) {
+            var todoDom = this.createTodoDom(todos);
+            li.appendChild(todoDom);
+          }
+          var children = v.children;
+          if (children !== undefined) {
+            var ul = this.createNode(children);
+            li.appendChild(ul);
+          }
+
+          return li;
+        }
+
+        // tree  & dom 影射关系
+        mapNodes(el) {
+          const container = document.querySelector(el);
+          const nodes = container.querySelectorAll(".item");
+          nodes.forEach((node) => {
+            const id = node.getAttribute("data-id");
+            this.nodes[id] = node;
+          });
+        }
+
+        // 更新数据
+        update(data, key, val) {
+          const id = data.id;
+          const node = this.nodes[id];
+          // 检测node是否存在
+          if (!node) return
+          let todoUl = node.querySelector(".list");
+
+          // 理论上讲只有todos会变化，才会影响dom
+          if (data.todos && data.todos.length) {
+            const todoDom = this.createTodoDom(data.todos);
+            // todoUl.appendChild(todoDom);
+            node.replaceChild(todoDom, todoUl);
+          } else {
+            // 如果当前没有兄弟元素，就删除父级元素
+            if (node.parentNode.children.length === 1) {
+              // 删除 node 父级的父级元素
+              node.parentNode.parentNode.remove();
+            } else {
+              // 删除 node 父级元素
+              node.remove();
+            }
+
+            // // 删除 node 父级的父级元素
+            // node.parentNode.parentNode.remove();
+          }
+        }
+
+        // 创建todo元素
+        createTodoDom(todos) {
+          var ul = document.createElement("ul");
+          ul.classList.add("list");
+          todos.forEach(function (v$1) {
+            var li = document.createElement("li");
+            li.classList.add("item");
+            var p = document.createElement("p");
+            p.classList.add("title");
+            var icons = document.createElement("i");
+            icons.classList.add("icons");
+            icons.classList.add("iconfont");
+            var match = v$1.keyword;
+            switch (match) {
+              case "BUG":
+                icons.classList.add("icon-bug");
+                break;
+              case "FIXME":
+                icons.classList.add("icon-gantanhao");
+                break;
+              case "HACK":
+                icons.classList.add("icon-zhuyi");
+                break;
+              case "TODO":
+                icons.classList.add("icon-daiban");
+                break;
+              case "XXX":
+                icons.classList.add("icon-xiufu");
+                break;
+              default:
+            }
+            p.appendChild(icons);
+            var tag = document.createElement("span");
+            tag.classList.add("tag");
+            tag.innerHTML = v$1.keyword;
+            p.appendChild(tag);
+            var text = document.createElement("span");
+            text.classList.add("label");
+            text.innerHTML = v$1.description;
+            p.appendChild(text);
+            p.addEventListener("click", function (param) {
+              hbuilderx.postMessage({
+                command: "click",
+                todo: v$1,
+                data: v,
+              });
+            });
+            li.appendChild(p);
+            ul.appendChild(li);
+          });
+          return ul;
+        }
+
+        // 数据更新
+        updateData(child, treeData) {
+          const findData = (data) => {
+            for (let i = 0; i < data.length; i++) {
+              const item = data[i];
+              if (item.id === child.id) {
+                item.todos = child.todos;
+                return item;
+              }
+              if (item.children && item.children.length > 0) {
+                const result = findData(item.children);
+                if (result) {
+                  return result;
+                }
+              }
+            }
+          };
+          let result = findData(treeData);
+          if (!result) {
+            const addData = (data) => {
+              for (let i = 0; i < data.length; i++) {
+                const item = data[i];
+                const children = item.children;
+                const cIds = item.id.split("/");
+                const ids = child.id.split("/");
+                // TODO 如果是折叠文件夹 ，如 名称为 pages/index ->index.vue ,新增 pages/test/test.vue ,则会出现问题,不会合并
+
+                // 判断 ids 数组是否包含 cIds 数组
+                const isInclude = cIds.every((v) => ids.includes(v));
+                if (isInclude) {
+                  // console.log("item", item);
+                  if (children && children.length > 0) {
+                    let have = addData(item.children);
+                    if (have) {
+                      // id 等于 ids 包含 cIds 之后的内容，但是不包含最后一个
+                      const id = ids.slice(
+                        ids.indexOf(cIds[cIds.length - 1]) + 1
+                      );
+                      // ，
+                      let content = child;
+                      // 如果  id 长度 等于 1 ，直接取值如果 大于1 ，则排除最后一个 ，并用 / 拼接
+                      if (id.length === 1) {
+                        content = child
+                        // const name = id[0];
+                        // item.children.push(content);
+                        // 创建数据
+                        // this.observe(treeData);
+                        // var li = this.createItemNode(content);
+                        // var node = this.nodes[item.id];
+                        // node.querySelector(".list").appendChild(li);
+                      } else {
+                        const name = id.slice(0, id.length - 1).join("/");
+                        content = {
+                          id: item.id + "/" + name,
+                          path: item.path + "/" + name,
+                          name: name,
+                          fileType: "dir",
+                          children: [child],
+                        };
+                      }
+
+                      item.children.push(content);
+                      this.fileSort(item.children);
+                      // 创建数据
+                      this.observe(treeData);
+                      var li = this.createItemNode(content);
+                      var node = this.nodes[item.id];
+                      let index = item.children.findIndex(
+                        (v) => v.id === content.id
+                      );
+                      console.log("item.id", item.id);
+                      // node.querySelector(".list").appendChild(li);
+                      const listDom = node.querySelector(".list");
+                      // const itemDom = listDom.querySelectorAll('.item')
+
+                      var lis = listDom.children; // 获取ul元素的所有子元素
+                      var itemDom = []; // 用于存储一级li元素的数组
+                      for (let i = 0; i < lis.length; i++) {
+                        if (lis[i].nodeName === "LI") {
+                          // 判断是否为li元素
+                          itemDom.push(lis[i]); // 将li元素添加到数组中
+                        }
+                      }
+
+                      const itemNode = itemDom[index];
+                      listDom.insertBefore(li, itemNode);
+
+                      // 这里不返回，避免从里到外，返回错误结果
+                      // return have
+                    }
+                  }
+                  return false;
+                } else {
+                  return true;
+                }
+              }
+            };
+            addData(treeData);
+
+            console.log("treeData", treeData);
+          }
+        }
+
+        /**
+         * 排序
+         * @param {Object} data
+         */
+        fileSort(data) {
+          data.sort((a, b) => {
+            // 根据 fileType 字段进行排序，dir 在上，file 在下
+            if (a.fileType === "dir" && b.fileType === "file") {
+              return -1; // a 在 b 之前
+            } else if (a.fileType === "file" && b.fileType === "dir") {
+              return 1; // a 在 b 之后
+            } else {
+              // fileType 相同，根据 name 字段进行排序
+              if (a.name < b.name) {
+                return -1; // a 在 b 之前
+              } else if (a.name > b.name) {
+                return 1; // a 在 b 之后
+              } else {
+                return 0; // a 和 b 相等
+              }
+            }
+          });
+          return data;
+        }
+      }
+
+      const tree = new Tree(treeData, "#app");
+
+      const editData1 = {
+        id: "my-vue3-project-test/src/App.vue",
+        path: "/Users/mehaotian/Desktop/uniui-temp-project/my-vue3-project-test/src/App.vue",
+        name: "App.vue",
+        fileExt: "vue",
+        fileType: "file",
+        todos: [],
+      };
+      const editData2 = {
+        id: "my-vue3-project-test/src/pages.json",
+        path: "/Users/mehaotian/Desktop/uniui-temp-project/my-vue3-project-test/src/pages.json",
+        name: "pages.json",
+        fileExt: "vue",
+        fileType: "file",
+        todos: [],
+      };
+      const editData3 = {
+        id: "my-vue3-project-test/src/uni.scss",
+        path: "/Users/mehaotian/Desktop/uniui-temp-project/my-vue3-project-test/src/uni.scss",
+        name: "uni.scss",
+        fileExt: "vue",
+        fileType: "file",
+        todos: [],
+      };
+
+      document.getElementById("btn").addEventListener("click", () => {
+        tree.updateData(editData1, treeData);
+        setTimeout(() => {
+          tree.updateData(editData2, treeData);
+        }, 1000);
+        setTimeout(() => {
+          tree.updateData(editData3, treeData);
+        }, 2000);
+
+        // data[0].name = "New Node 1";
+        // treeData[0].children[0].children[0].name = "new node";
+      });
+    </script>
+  </body>
+</html>

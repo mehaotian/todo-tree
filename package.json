@@ -1,0 +1,60 @@
+{
+	"name": "mehaotian-todo-tree",
+	"id": "mehaotian-todo-tree",
+	"description": "待办提醒,todo tree",
+	"displayName": "Todo Tree 待办提醒",
+	"version": "0.0.1",
+	"publisher": "mehaotian",
+	"engines": {
+		"HBuilderX": "^2.7.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./extension",
+	"activationEvents": [
+		"onView:extensions.treeview"
+	],
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "treeview",
+					"title": "Todo Tree 待办提醒"
+				}
+			]
+		},
+		"views": {
+			"treeview": [
+				{
+					"id": "extensions.treeview",
+					"name": "Todo Tree 待办提醒"
+				}
+			]
+		}
+	},
+	"extensionDependencies": [
+		"plugin-manager"
+	],
+	"keywords": [
+		"rescript"
+	],
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"rescript": "*"
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@jihchi/vite-plugin-rescript": "^5.1.0",
+		"rescript": "^10.1.2",
+		"rollup-plugin-copy": "^3.4.0",
+		"rollup-plugin-ignore": "^1.0.10",
+		"rollup-plugin-postcss": "^4.0.2",
+		"vite": "^4.1.0"
+	}
+}

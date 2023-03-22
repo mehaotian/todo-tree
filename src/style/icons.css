@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'fileiconfont';
+  src:  url('./fileiconfont.ttf?o4ulk9') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'fileiconfont' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-c:before {
+  content: "\e910";
+}
+.icon-cpp:before {
+  content: "\e911";
+}
+.icon-java:before {
+  content: "\e912";
+}
+.icon-less:before {
+  content: "\e913";
+}
+.icon-php:before {
+  content: "\e914";
+}
+.icon-py:before {
+  content: "\e915";
+}
+.icon-scss:before {
+  content: "\e916";
+  color: #f03d70;
+}
+.icon-stylus:before {
+  content: "\e917";
+  color: #6aab20;
+}
+.icon-ts:before {
+  content: "\e919";
+}
+.icon-word:before {
+  content: "\e91a";
+}
+.icon-xls:before {
+  content: "\e91b";
+}
+.icon-xml:before {
+  content: "\e91c";
+}
+.icon-uniE90F:before {
+  content: "\e90f";
+}
+.icon-uniE900:before {
+  content: "\e900";
+}
+.icon-js:before {
+  content: "\e901";
+}
+.icon-vue:before {
+  content: "\e902";
+}
+.icon-5:before {
+  content: "\e903";
+}
+.icon-1:before {
+  content: "\e904";
+}
+.icon-2:before {
+  content: "\e905";
+}
+.icon-3:before {
+  content: "\e906";
+}
+.icon-4:before {
+  content: "\e907";
+}
+.icon-css:before {
+  content: "\e908";
+}
+.icon-html:before {
+  content: "\e909";
+}
+.icon-img:before {
+  content: "\e90a";
+}
+.icon-json:before {
+  content: "\e90b";
+}
+.icon-m:before {
+  content: "\e90c";
+}
+.icon-unp:before {
+  content: "\e90d";
+}
+.icon-w:before {
+  content: "\e90e";
+}
