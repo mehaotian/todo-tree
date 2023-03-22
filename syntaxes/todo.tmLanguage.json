@@ -1,0 +1,43 @@
+{
+  "scopeName": "todo-comment.injection",
+  "injectionSelector": "L:comment.line.double-slash",
+  "patterns": [
+    {
+      "include": "#todo-keyword"
+    },
+		{
+		  "include": "#fixme-keyword"
+		},
+		{
+		  "include": "#bug-keyword"
+		},
+		{
+		  "include": "#xxx-keyword"
+		},
+		{
+		  "include": "#hack-keyword"
+		}
+  ],
+  "repository": {
+    "todo-keyword": {
+      "match": "TODO",
+      "name": "storage.type"
+    },
+		"fixme-keyword": {
+		  "match": "FIXME",
+		  "name": "constant.numeric.decimal"
+		},
+		"bug-keyword": {
+		  "match": "BUG",
+		  "name": "entity.other.attribute-name.class"
+		},
+		"xxx-keyword": {
+		  "match": "XXX",
+		  "name": "keyword.control.switch"
+		},
+		"hack-keyword": {
+		  "match": "HACK",
+		  "name": "entity.name.function"
+		}
+  }
+}

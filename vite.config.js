@@ -17,7 +17,10 @@ export default defineConfig({
         },{
           src: "package.json",
           dest: "dist",
-        }
+        },{
+					src:"syntaxes",
+					dest:"dist"
+				}
       ],
       hook: "writeBundle",
     }),

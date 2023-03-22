@@ -283,9 +283,9 @@ async function showWebView(webview) {
   	<div id="app"></div>${src}
   </body>
 </html>`;
-	
+
 	webview.onDidReceiveMessage(async (msg) => {
-		console.log('触发',msg);
+		console.log('触发', msg);
 		if (msg.command === 'ready') {
 			const flolders = await getFolders()
 			let arr = []
@@ -294,7 +294,7 @@ async function showWebView(webview) {
 				const uri = fold.uri.fsPath
 				let tree = await generateTree(uri)
 				// 文件有内容才会插入
-				if(tree.children && tree.children.length > 0) {
+				if (tree.children && tree.children.length > 0) {
 					Object.assign(tree, fold, { root: true, fileType: 'dir', id: tree.name })
 					arr.push(tree)
 				}
@@ -344,8 +344,10 @@ function openDocument(event) {
 	documentPromise.then(() => {
 		let activeEditor = hx.window.getActiveTextEditor();
 		activeEditor.then((editor) => {
-			// HOCK 不确定这了 -1 是否正确，因为跳转总是会少一行
+			// HACK 不确定这了 -1 是否正确，因为跳转总是会少一行
 			editor.gotoLine(todo.lineNumber - 1)
+		}).catch(err => {
+			console.log(err);
 		});
 	}).catch(err => {
 		console.log(err);
@@ -365,47 +367,49 @@ function openSearch(event) {
 		if (!result) {
 			return;
 		}
-		openDocument({todo:result,data:{path:result.path}})
+		openDocument({ todo: result, data: { path: result.path } })
 		let backPath = result.backPath;
+	}).catch(err => {
+		console.log(err);
 	})
 
 }
 
 
 function tagBuild(data) {
-  let arr = [];
-  const flat = (data) => {
-    let files = [];
-    data.forEach((item) => {
-      const children = item.children;
-      if (children && children.length > 0) {
-        let fileArr = flat(children);
-        files.push(...fileArr);
-      } else {
-        item.mode = "tag";
-        files.push(item);
-      }
-    });
-    return files;
-  };
-  data.forEach((item) => {
-    const children = item.children;
-    let files = flat(children);
-    let newTodos = [];
-    files.forEach((v) => {
-      const todos = v.todos;
-      todos.map((a) => {
-        a.path = v.path;
-        a.mode = "tag";
+	let arr = [];
+	const flat = (data) => {
+		let files = [];
+		data.forEach((item) => {
+			const children = item.children;
+			if (children && children.length > 0) {
+				let fileArr = flat(children);
+				files.push(...fileArr);
+			} else {
+				item.mode = "tag";
+				files.push(item);
+			}
+		});
+		return files;
+	};
+	data.forEach((item) => {
+		const children = item.children;
+		let files = flat(children);
+		let newTodos = [];
+		files.forEach((v) => {
+			const todos = v.todos;
+			todos.map((a) => {
+				a.path = v.path;
+				a.mode = "tag";
 				a.label = `[${a.keyword}] ${a.description}`
 				a.description = v.id
-        return a;
-      });
-      newTodos.push(...todos);
-    });
-    arr.push(...newTodos);
-  });
-  return arr;
+				return a;
+			});
+			newTodos.push(...todos);
+		});
+		arr.push(...newTodos);
+	});
+	return arr;
 }
 
 /**

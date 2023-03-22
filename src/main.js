@@ -106,7 +106,13 @@ class Tree {
     switch (match) {
       case "dir":
         if (v.root) {
-          icons.classList.add("icon-uniE90F");
+          switch (v.nature) {
+            case "UniApp_Vue":
+              icons.classList.add("icon-unp");
+              break;
+            default:
+              icons.classList.add("icon-uniE90F");
+          }
         } else {
           icons.classList.add("icon-2");
         }
@@ -255,6 +261,7 @@ class Tree {
         node.replaceChild(todoDom, todoUl);
       }
     } else {
+      if (data.fileType === "dir") return;
       // 如果当前没有兄弟元素，就删除父级元素
       if (node.parentNode.children.length === 1 && data.mode !== "tag") {
         const parentDom = node.parentNode.parentNode;
@@ -667,10 +674,10 @@ if (app !== undefined) {
   no_more.innerHTML = no_data_content;
   app.appendChild(no_more);
   window.addEventListener("hbuilderxReady", function (param) {
-    console.log('init');
+    console.log("init");
     // let treeList = [];
     hbuilderx.onDidReceiveMessage(function (res) {
-      console.log('on');
+      console.log("on");
       let data = res.data;
       if (res.command === "init") {
         rawdata = data;
@@ -702,10 +709,10 @@ if (app !== undefined) {
       }
     });
     setTimeout(function (param) {
-    hbuilderx.postMessage({
-      command: "ready",
-    });
-    }, 1);
+      hbuilderx.postMessage({
+        command: "ready",
+      });
+    }, 1000);
   });
 }
 

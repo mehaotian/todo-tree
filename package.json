@@ -17,21 +17,27 @@
 	],
 	"contributes": {
 		"viewsContainers": {
-			"activitybar": [
-				{
-					"id": "treeview",
-					"title": "Todo Tree 待办提醒"
-				}
-			]
+			"activitybar": [{
+				"id": "treeview",
+				"title": "Todo Tree 待办提醒"
+			}]
 		},
 		"views": {
-			"treeview": [
-				{
-					"id": "extensions.treeview",
-					"name": "Todo Tree 待办提醒"
-				}
+			"treeview": [{
+				"id": "extensions.treeview",
+				"name": "Todo Tree 待办提醒"
+			}]
+		},
+		"grammars": [{
+			"scopeName": "todo-comment.injection",
+			"path": "./syntaxes/todo.tmLanguage.json",
+			"injectTo": [
+				"source.js",
+				"text.html.vue",
+				"source.ts",
+				"text.html"
 			]
-		}
+		}]
 	},
 	"extensionDependencies": [
 		"plugin-manager"
