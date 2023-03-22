@@ -12,7 +12,7 @@ class Tree {
   }
 
   init(data, el) {
-    this.data = data;
+    this.data = this.fileSort(data);
     this.el = el;
     this.render();
     this.observe(this.data);
@@ -265,10 +265,13 @@ class Tree {
         const parentDom = node.parentNode.parentNode;
         const id = parentDom.getAttribute("data-id");
         const ids = id.split("/");
+        console.log("ids", ids);
         if (ids.length > 1) {
           // 删除 node 父级的父级元素
           parentDom.remove();
           // node.remove();
+        } else if (ids.length === 1) {
+          parentDom.remove();
         } else {
           node.remove();
         }
@@ -398,6 +401,7 @@ class Tree {
     // 如果没有找到，就新增数据
     if (!result) {
       const addData = (data) => {
+        console.log("data", data);
         for (let i = 0; i < data.length; i++) {
           const item = data[i];
           const children = item.children;
@@ -405,9 +409,14 @@ class Tree {
           const arrIds = child.id.split("/");
           const cIds = item.id;
           const ids = child.id;
-          // TODO 如果是折叠文件夹 ，如 名称为 pages/index ->index.vue ,新增 pages/test/test.vue ,则会出现问题,不会合并
+          // console.log('arrcIds',arrcIds);
+          // console.log('arrIds',arrIds);
+          // console.log('cIds',cIds);
+          // console.log('ids',ids);
           const isInclude =
             ids.includes(cIds) && arrcIds.length !== arrIds.length;
+
+          console.log("isInclude", isInclude);
           if (isInclude) {
             let have = addData(children);
             if (!have) {
@@ -504,7 +513,18 @@ class Tree {
           }
         }
       };
-      addData(treeData);
+      let have = addData(treeData);
+
+      // 没有最外层目录，添加最外层目录
+      if (!have) {
+        console.log("111111", 111111);
+        hbuilderx.postMessage({
+          command: "createDir",
+          data: {
+            path: child.path,
+          },
+        });
+      }
     }
   }
 
@@ -702,6 +722,54 @@ if (app !== undefined) {
       if (res.command === "update") {
         console.log("更新数据", data);
         tree.updateData(data, treeList);
+      }
+
+      if (res.command === "create_dir") {
+        console.log("创建文件夹", data);
+        const listBtn = document.querySelector("#list");
+        let modeId = listBtn.getAttribute("data-id");
+        let mode = "list";
+        switch (modeId) {
+          case "1":
+            mode = "tree";
+
+            break;
+          case "2":
+            mode = "flat";
+            break;
+          case "3":
+            mode = "tag";
+            break;
+        }
+        data.mode = mode;
+        treeList.push(data);
+        tree.defineReactive(treeList, treeList.length - 1, data);
+        tree.fileSort(treeList);
+
+        let ul = document.querySelector(".container");
+        let dom = ul.querySelector(`ul`);
+
+        let is_li = ul.querySelector(`[data-id="${data.id}"]`);
+        let li = tree.createItemNode(data, 0);
+        if (is_li) {
+          // 替换元素
+          dom.replaceChild(li, is_li);
+        } else {
+          let index = treeList.findIndex((v) => v.id === data.id);
+          let lis = dom.children; // 获取ul元素的所有子元素
+          let itemDom = []; // 用于存储一级li元素的数组
+          for (let i = 0; i < lis.length; i++) {
+            if (lis[i].nodeName === "LI") {
+              // 判断是否为li元素
+              itemDom.push(lis[i]); // 将li元素添加到数组中
+            }
+          }
+
+          const itemNode = itemDom[index];
+          dom.insertBefore(li, itemNode);
+        }
+
+        tree.mapNodes(app);
       }
     });
     setTimeout(function (param) {

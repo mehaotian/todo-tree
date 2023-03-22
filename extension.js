@@ -335,6 +335,33 @@ async function showWebView(webview) {
     if (msg.command === "search") {
       openSearch(msg);
     }
+
+    if (msg.command === "createDir") {
+      const fsPath = msg.data.path;
+
+      var wsPromise = hx.workspace.getWorkspaceFolder(path.join(fsPath));
+      wsPromise.then(async function (fold) {
+        console.log("文件所在项目：", fold);
+        let uri = fold.uri.fsPath;
+        // 路径转换
+        uri = uri.split(path.sep).join("/");
+        let tree = await generateTree(uri);
+        // 文件有内容才会插入
+        if (tree.children && tree.children.length > 0) {
+          Object.assign(tree, fold, {
+            root: true,
+            fileType: "dir",
+            id: tree.name,
+          });
+
+          console.log('tree',tree);
+          webview.postMessage({
+            command: "create_dir",
+            data: tree,
+          });
+        }
+      });
+    }
   });
 
   let onDidSaveTextDocumentEventDispose = hx.workspace.onDidSaveTextDocument(
