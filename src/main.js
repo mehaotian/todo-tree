@@ -239,10 +239,13 @@ class Tree {
       this.nodes[id] = node;
     });
 
-    if(this.data.length === 0) {
-      console.log('没有数据了');
+    const tag = app.querySelectorAll(".tag--count");
+    const len = tag.length || 0;
+    document.getElementById("tag-cont").innerText = len;
+
+    if (this.data.length === 0) {
       let no_more = document.getElementById("nomore");
-      no_more.innerHTML = '没有待办数据，快去添加吧'
+      no_more.innerHTML = "没有待办数据，快去添加吧";
       no_more.style.display = "block";
     }
   }
@@ -272,7 +275,6 @@ class Tree {
         const parentDom = node.parentNode.parentNode;
         const id = parentDom.getAttribute("data-id");
         const ids = id.split("/");
-        console.log("ids", ids);
         if (ids.length > 1) {
           // 删除 node 父级的父级元素
           parentDom.remove();
@@ -290,7 +292,6 @@ class Tree {
       }
     }
 
-    
     this.mapNodes(this.el);
   }
 
@@ -332,6 +333,7 @@ class Tree {
     li.classList.add("item");
     let p = document.createElement("p");
     p.classList.add("title");
+    p.classList.add("tag--count");
     p.style.paddingLeft = `${index * 22}px`;
     let icons = document.createElement("i");
     icons.classList.add("icons");
@@ -410,7 +412,6 @@ class Tree {
     // 如果没有找到，就新增数据
     if (!result) {
       const addData = (data) => {
-        console.log("data", data);
         for (let i = 0; i < data.length; i++) {
           const item = data[i];
           const children = item.children;
@@ -425,7 +426,6 @@ class Tree {
           const isInclude =
             ids.includes(cIds) && arrcIds.length !== arrIds.length;
 
-          console.log("isInclude", isInclude);
           if (isInclude) {
             let have = addData(children);
             if (!have) {
@@ -523,10 +523,9 @@ class Tree {
         }
       };
       let have = addData(treeData);
-      
+
       // 没有最外层目录，添加最外层目录
       if (!have) {
-        console.log("111111", 111111);
         hbuilderx.postMessage({
           command: "createDir",
           data: {
@@ -581,21 +580,21 @@ function treeChange(e, data, app) {
     currentEl.classList.remove("icon-icon_shiyongwendang");
     currentEl.classList.add("icon-shuzhuangtu");
     currentEl.setAttribute("data-id", "2");
-    title.innerText = "待办：按文件显示";
+    title.innerText = "按文件显示";
     treeList = flatBuild(data);
     tree.init(treeList, app);
   } else if (show === "2") {
     currentEl.classList.remove("icon-shuzhuangtu");
     currentEl.classList.add("icon-biaoqian");
     currentEl.setAttribute("data-id", "3");
-    title.innerText = "待办：按标签显示";
+    title.innerText = "按标签显示";
     treeList = tagBuild(data);
     tree.init(treeList, app);
   } else {
     currentEl.classList.remove("icon-biaoqian");
     currentEl.classList.add("icon-icon_shiyongwendang");
     currentEl.setAttribute("data-id", "1");
-    title.innerText = "待办：按目录显示";
+    title.innerText = "按目录显示";
     treeList = treeBuild(data);
     tree.init(treeList, app);
   }
@@ -683,7 +682,7 @@ if (app !== undefined) {
   loading = true;
   div.classList.add("tools-box");
   div.innerHTML = `
-    <span class="tools-title" id="title">待办：按目录显示</span>
+    <span class="tools-title">待办：<span id="title">按目录显示</span>（ <span id="tag-cont">0</span> ）</span>
     <div class="tools-btn">
         <i title="切换内容显示模式" class="btn-item iconfont icon-icon_shiyongwendang" data-id="1" id="list"></i>
         <i title="搜索待办" class="btn-item iconfont icon-sousuo" id="search"></i>
@@ -698,6 +697,20 @@ if (app !== undefined) {
   no_more.setAttribute("id", "nomore");
   no_more.innerHTML = no_data_content;
   app.appendChild(no_more);
+
+  let rightBox = document.createElement("div");
+  rightBox.classList.add("right-box");
+  rightBox.setAttribute("id", "contextMenu");
+  rightBox.innerHTML = `
+  <div class="right-box-content">
+    <div class="right-item">做了个右键菜单</div>
+    <div class="right-item">但是现在还没有功能</div>
+    <div class="right-item">暂时还不知道放啥</div>
+    <div class="right-item">所以你点了也没用</div>
+  </div>
+  `;
+  app.appendChild(rightBox);
+
   window.addEventListener("hbuilderxReady", function (param) {
     console.log("init");
     // let treeList = [];
@@ -729,12 +742,10 @@ if (app !== undefined) {
       }
 
       if (res.command === "update") {
-        console.log("更新数据", data);
         tree.updateData(data, treeList);
       }
 
       if (res.command === "create_dir") {
-        console.log("创建文件夹", data);
         const listBtn = document.querySelector("#list");
         let modeId = listBtn.getAttribute("data-id");
         let mode = "list";
@@ -787,6 +798,41 @@ if (app !== undefined) {
       });
     }, 1000);
   });
+
+  function showContextMenu(evt) {
+    evt.preventDefault(); // 阻止默认的右键菜单
+    var contextMenu = document.getElementById("contextMenu");
+    var container = document.getElementById("app"); //获取区域
+    /*获取当前鼠标右键按下后的位置，据此定义菜单显示的位置*/
+    var rightedge = container.clientWidth - evt.clientX;
+    var bottomedge = container.clientHeight - evt.clientY;
+    console.log(container.clientHeight);
+    /*如果从鼠标位置到容器右边的空间小于菜单的宽度，就定位菜单的左坐标（Left）为当前鼠标位置向左一个菜单宽度*/
+    if (rightedge < contextMenu.offsetWidth) {
+      contextMenu.style.left =
+        container.scrollLeft + evt.clientX - contextMenu.offsetWidth + "px";
+    } else {
+      /*否则，就定位菜单的左坐标为当前鼠标位置*/
+      contextMenu.style.left = container.scrollLeft + evt.clientX + "px";
+    }
+    /*如果从鼠标位置到容器下边的空间小于菜单的高度，就定位菜单的上坐标（Top）为当前鼠标位置向上一个菜单高度*/
+    if (bottomedge < contextMenu.offsetHeight) {
+      contextMenu.style.top =
+        container.scrollTop + evt.clientY - contextMenu.offsetHeight + "px";
+    } else {
+      /*否则，就定位菜单的上坐标为当前鼠标位置*/
+      contextMenu.style.top = container.scrollTop + evt.clientY + "px";
+    }
+    /*设置菜单可见*/
+    contextMenu.style.display = "block";
+  }
+
+  // 在需要时附加右键菜单
+  document.addEventListener("contextmenu", showContextMenu);
+  window.onclick = function (e) {
+    //关闭右键菜单
+    document.getElementById("contextMenu").style.display = "none"; //用户触发click事件就可以关闭了，因为绑定在window上，按事件冒泡处理，不会影响菜单的功能
+  };
 }
 
 function treeBuild(data) {

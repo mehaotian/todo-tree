@@ -3,7 +3,9 @@ const path = require("path");
 const fs = require("fs");
 const readline = require("readline");
 const plugin = require("./plugin");
-let isDev = true;
+
+// 开发环境改成 true ，build代码时一定要改为 false
+let isDev = false;
 
 // 获取项目管理器下的所有项目
 const getFolders = async () => {
@@ -13,23 +15,34 @@ const getFolders = async () => {
 // 匹配关键字
 const keywords = ["TODO", "FIXME", "BUG", "HACK", "XXX"]; // 要匹配的关键字
 const regex = new RegExp(`(${keywords.join("|")})\\s*(.*)`); // 匹配的正则表达式
-// 忽略文件目录
-const ignore = ["dist", "unpackage", "node_modules", "build", "lib"];
-// 允许文件类型
-const fileWhitelist = [
-  "vue",
-  "nvue",
-  "js",
-  "wxs",
-  "ts",
-  "html",
-  "css",
-  "scss",
-  "less",
-  "md",
-  "json",
-];
 
+// const defaultIgnore = ["dist", "unpackage", "node_modules", "build", "lib"];
+// const defaultFileWhitelist = [
+//   "vue",
+//   "nvue",
+//   "js",
+//   "wxs",
+//   "ts",
+//   "html",
+//   "css",
+//   "scss",
+//   "less",
+//   "md",
+//   "json",
+// ];
+
+let config = hx.workspace.getConfiguration("todo-tree");
+
+let configIgnore = config.get("ignore");
+let configWhitelist = config.get("file");
+
+// 忽略文件目录
+let ignore = configIgnore.split("|");
+// 允许文件类型
+let fileWhitelist = configWhitelist.split("|");
+
+console.log(ignore);
+console.log(fileWhitelist);
 /**
  * 扫描文件，标识关键字
  */
@@ -304,6 +317,16 @@ async function showWebView(webview) {
   webview.onDidReceiveMessage(async (msg) => {
     console.log("触发", msg);
     if (msg.command === "ready") {
+      let config = hx.workspace.getConfiguration("todo-tree");
+
+      let configIgnore = config.get("ignore");
+      let configWhitelist = config.get("file");
+
+      // 忽略文件目录
+      ignore = configIgnore.split("|");
+      // 允许文件类型
+      fileWhitelist = configWhitelist.split("|");
+
       const flolders = await getFolders();
       let arr = [];
       for (let key = 0; key < flolders.length; key++) {
@@ -354,7 +377,7 @@ async function showWebView(webview) {
             id: tree.name,
           });
 
-          console.log('tree',tree);
+          console.log("tree", tree);
           webview.postMessage({
             command: "create_dir",
             data: tree,
@@ -378,10 +401,12 @@ async function showWebView(webview) {
         if (folderPath.startsWith("/")) {
           folderPath = folderPath.substring(1);
         }
-        const id = path.relative(
+        let id = path.relative(
           path.dirname(folderPath),
           path.join(fsPath, "..")
         );
+
+        id = id.split(path.sep).join("/");
         let fileTodos = await scanFile(fsPath, id);
         webview.postMessage({
           command: "update",
