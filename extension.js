@@ -283,7 +283,7 @@ function fileSort(data) {
 async function showWebView(webview) {
   // 使用测试和开发环境
   // 使用 webview.asWebviewUri 生成可以在 webview 中执行的路径
-  let src = `<script src="${path.join(__dirname, "main.js")}"></script>`;
+  let src = `<script src="${path.join(__dirname, "mainIndex.js")}"></script>`;
   let link = `<link rel="stylesheet" type="text/css" href="${path.join(
     __dirname,
     "style/index.css"
@@ -297,7 +297,7 @@ async function showWebView(webview) {
     "style/iconfont.css"
   )}"></script>`;
   if (isDev) {
-    src = '<script src="http://127.0.0.1:5173/src/main.js"></script>';
+    src = '<script src="http://127.0.0.1:5173/src/mainIndex.js"></script>';
     link = `<link rel="stylesheet" type="text/css" href="http://127.0.0.1:5173/src/style/index.css"></script>`;
     icons = `<link rel="stylesheet" type="text/css" href="http://127.0.0.1:5173/src/style/icons.css"></script>`;
     icons2 = `<link rel="stylesheet" type="text/css" href="http://127.0.0.1:5173/src/style/iconfont.css"></script>`;

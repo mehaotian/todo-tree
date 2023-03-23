@@ -38,9 +38,8 @@ export default defineConfig({
     // },
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "src/main.js"),
+        mainIndex: resolve(__dirname, "src/main.js"),
         extension: resolve(__dirname, "extension.js"),
-
       },
       output: {
         entryFileNames: "[name].js",
